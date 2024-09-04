@@ -67,8 +67,6 @@ def check_pass_tests(contest_api: ContestAPI, contest_id: int, problem_alias: st
     print("Check pass tests OK")
 
 
-clang_format_config = 'course-settings/clang-format.json'
-clang_tidy_config = 'course-settings/clang-tidy.json'
 extra_args = '-std=c++20'
 
 def run_linter(command):
@@ -80,10 +78,10 @@ def run_linter(command):
 
 def check_linter(filename: str):
     print("Running clang-format on {filename}...")
-    run_linter(f"clang-format --style=file:{clang_format_config} -n --Werror {filename}")
+    run_linter(f"clang-format --style=file -n --Werror {filename}")
 
     # TODO: add clang_tidy_config file
     print("Running clang-tidy on {filename}...")
-    run_linter(f"clang-tidy {filename} -- {extra_args} ")
+    run_linter(f"clang-tidy {filename} -- {extra_args}")
 
     print("Linter summary completed.")
