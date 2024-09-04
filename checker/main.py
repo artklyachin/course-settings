@@ -1,6 +1,7 @@
 from contest_api import ContestAPI
 import checker
 import config
+import os
 
 
 def main():
@@ -8,6 +9,7 @@ def main():
     course_config = config.load_course_config()
 
     print("my check: ", student_config, course_config, "yy:", os.environ.get("GITHUB_HEAD_REF"))
+    print(os.environ.get("GITHUB_HEAD_REF"))
 
     contest_api = ContestAPI(student_config["token"])
     contest_info, problem_alias = checker.security_stage(course_config)
