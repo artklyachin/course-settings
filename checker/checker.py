@@ -67,5 +67,22 @@ def check_pass_tests(contest_api: ContestAPI, contest_id: int, problem_alias: st
     print("Check pass tests OK")
 
 
+clang_format_config = 'course-settings/clang-format.json'
+clang_tidy_config = 'course-settings/clang-tidy.json'
+extra_args = '-std=c++20'
+
+def run_linter(command):
+    try:
+        result = subprocess.run(command, shell=True, check=True, text=True, capture_output=True)
+        print(result.stdout)
+    except subprocess.CalledProcessError as e:
+        raise CheckerError(f"Command failed with exit code {e.returncode}. {e.stderr}")
+
 def check_linter(filename: str):
-    print("Legacy linter disabled")
+    print("Running clang-format...")
+    run_linter(f"clang-format --style=file --config={clang_format_config} {extra_args}")
+
+    print("Running clang-tidy...")
+    run_linter(f"clang-tidy --config-file={clang_tidy_config} {extra_args}")
+
+    print("Linter summary completed.")
