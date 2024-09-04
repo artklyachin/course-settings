@@ -1,8 +1,6 @@
 from contest_api import ContestAPI
 import checker
 import config
-import os
-
 
 def main():
     student_config = config.load_student_config()

@@ -77,11 +77,11 @@ def run_linter(command):
         raise CheckerError(f"Command failed with exit code {e.returncode}. {e.stderr}")
 
 def check_linter(filename: str):
-    print("Running clang-format on {filename}...")
+    print("Running clang-format on", filename)
     run_linter(f"clang-format --style=file -n --Werror {filename}")
 
     # TODO: add clang_tidy_config file
-    print("Running clang-tidy on {filename}...")
+    print("Running clang-tidy on", filename)
     run_linter(f"clang-tidy {filename} -- {extra_args}")
 
     print("Linter summary completed.")
