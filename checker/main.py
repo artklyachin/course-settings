@@ -7,6 +7,8 @@ def main():
     student_config = config.load_student_config()
     course_config = config.load_course_config()
 
+    print("my check: ", student_config, course_config, "yy:", os.environ.get("GITHUB_HEAD_REF"))
+
     contest_api = ContestAPI(student_config["token"])
     contest_info, problem_alias = checker.security_stage(course_config)
     contest_id = contest_info["yandex_contest_id"]
