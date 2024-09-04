@@ -1,0 +1,22 @@
+[
+    {
+        "id": 6,
+        "yandex_contest_id": 60038,
+        "tasks_for_review": ["A", "C", "K", "N", "P"]
+    },
+    {
+        "id": 7,
+        "yandex_contest_id": 60672,
+        "tasks_for_review": ["D", "E"]
+    },
+    {
+        "id": 8,
+        "yandex_contest_id": 61381,
+        "tasks_for_review": ["A", "E", "I"]
+    },
+    {
+        "id": 9,
+        "yandex_contest_id": 62002,
+        "tasks_for_review": ["B", "I", "O", "Q"]
+    }
+]
