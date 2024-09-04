@@ -2,5 +2,5 @@
     BasedOnStyle: Google,
     DerivePointerAlignment: false,
     PointerAlignment: Left,
-    AlignOperands: true
+    // AlignOperands: true
 }
