@@ -5,12 +5,12 @@ DATA_PATH = "/data"
 SETTINGS_PATH = "course-settings"
 
 def load_course_config():
-    filepath = "{SETTINGS_PATH}/course_config.json"
+    filepath = f"{SETTINGS_PATH}/course_config.json"
     with open(filepath, "r") as f:
         return json.load(f)
 
 
 def load_student_config():
-    filepath = "{DATA_PATH}/config.json"
+    filepath = f"{DATA_PATH}/config.json"
     with open(filepath, "r") as f:
         return json.load(f)
