@@ -9,8 +9,6 @@ class ContestAPI:
     def __init__(self, token):
         self._session = Session()
         self._session.headers["Authorization"] = f"OAuth {token}"
-        if token=="" or token=="Not set":
-            raise CheckerError(f"Token is empty")
 
 
     def get_all_submissions(self, contest_id):
