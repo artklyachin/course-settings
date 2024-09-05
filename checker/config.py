@@ -6,5 +6,5 @@ def load_course_config():
 
 
 def load_student_config():
-    with open("config.json") as f:
+    with open("data/config.json") as f:
         return json.load(f)
