@@ -1,10 +1,16 @@
 import json
+import os
+
+DATA_PATH = "/data"
+SETTINGS_PATH = "course-settings"
 
 def load_course_config():
-    with open("course-settings/course_config.json") as f:
+    filepath = "{SETTINGS_PATH}/course_config.json"
+    with open(filepath, "r") as f:
         return json.load(f)
 
 
 def load_student_config():
-    with open("data/config.json") as f:
+    filepath = "{DATA_PATH}/config.json"
+    with open(filepath, "r") as f:
         return json.load(f)

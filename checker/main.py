@@ -10,7 +10,7 @@ def main():
     contest_info, problem_alias = checker.security_stage(course_config)
     contest_id = contest_info["yandex_contest_id"]
     contest_alias = "contest" + str(contest_info["id"])
-    solution_filename = f"data/{contest_alias}/{problem_alias}.cpp"
+    solution_filename = f"{config.DATA_PATH}/{contest_alias}/{problem_alias}.cpp"
     
     checker.check_linter(solution_filename)
     checker.check_deadline_met(contest_api, contest_id, problem_alias)
